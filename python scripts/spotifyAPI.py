@@ -1,4 +1,3 @@
-# Statistical Learning Project: Can we predict that a song will be a hit?
 # Spotify API (spotipy)
 
 # usual imports
