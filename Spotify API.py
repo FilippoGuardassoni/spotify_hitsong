@@ -1,5 +1,4 @@
 # Statistical Learning Project: Can we predict that a song will be a hit?
-# Filippo Guardassoni
 # Spotify API (spotipy)
 
 # usual imports
@@ -9,8 +8,8 @@ import pandas as pd
 import socket
 
 # connect spotipy api with spotify developer web app
-SPOTIPY_CLIENT_ID = "de80b88d13784b7a99349847d78f1215"
-SPOTIPY_CLIENT_SECRET = "04a5093a630143309ac99bc91ecd8cb8"
+SPOTIPY_CLIENT_ID = "..."
+SPOTIPY_CLIENT_SECRET = "..."
 
 client_credentials_manager = SCC(client_id=SPOTIPY_CLIENT_ID, client_secret=SPOTIPY_CLIENT_SECRET)
 sp = spotipy.Spotify(auth_manager=client_credentials_manager)
