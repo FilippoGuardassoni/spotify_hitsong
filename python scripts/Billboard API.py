@@ -1,5 +1,3 @@
-# Statistical Learning Project: Can we predict that a song will be a hit?
-# Filippo Guardassoni
 # Billboard API
 # See Billboard API instructions in Github - Guo
 
