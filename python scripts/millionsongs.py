@@ -1,5 +1,3 @@
-# Statistical Learning Project: Can we predict that a song will be a hit?
-# Filippo Guardassoni
 # Million Songs Dataset
 # See Million Songs Dataset website for instructions
 
