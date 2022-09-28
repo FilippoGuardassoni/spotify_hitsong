@@ -12,7 +12,7 @@ from keras.layers import Dropout
 
 
 # Import dataset
-df = pd.read_csv('/Users/amministratore/Documents/Data Science/First Year/Second Semester/Statistical Learning, Deep Learning and Artificial Intelligence/Statistical Learning/Individual Project/my data/songs.csv')
+df = pd.read_csv('...')
 print(df.dtypes)
 
 # Change rel_date type to datetime
