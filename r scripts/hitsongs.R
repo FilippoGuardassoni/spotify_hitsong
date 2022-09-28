@@ -1,7 +1,4 @@
-#Name: Filippo Guardassoni
-#Topic: Hitsong Prediction
 #Time Span: 2007 - 2021
-#Individual Project for Statistical Learning
 
 '#install.packages ("ggplot2")
 install.packages("gridExtra")
