@@ -52,7 +52,7 @@ library(e1071)
 
 set.seed(1234)
 
-songs <- read.csv("~/Documents/Data Science/First Year/Second Semester/Statistical Learning, Deep Learning and Artificial Intelligence/Statistical Learning/Individual Project/my data/songs.csv")
+songs <- read.csv("...")
 attach(songs)
 
 songs <- select(songs, -c(X))
