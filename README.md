@@ -15,11 +15,11 @@ The global recorded music market grew by 7.4% in 2020, the sixth consecutive yea
 
 # Installation and Setup
 
-- Google Colab Instance
+- Tensorflow
+- R/ R studio
 
 ## Codes and Resources Used
 - Python 2.7 and up
-- PySpark
 
 ## Python Packages Used
 - **General Purpose:** General purpose packages like `urllib, os, request`, and many more.
@@ -29,39 +29,60 @@ The global recorded music market grew by 7.4% in 2020, the sixth consecutive yea
 
 # Data
 
-The Old_Newspaper dataset contains 16,806,041 records. It contains natural language text from various newspapers, social media posts and blog pages in multiple languages.
+The song dataset contains around 12.500 records of songs with artist information and audio features.
 
-## Source Data & 
-The dataset is a subset taken from HC Corpora which is a collection of corpora for various language (66). It is an already cleaned version of the raw data from newspaper subset of the HC corpus. The dataset contains the following variables:
+## Source Data
+### The Billboard Hot 100
+The Billboard Hot 100 is the music industry standard record chart in the United States for songs since 1955, published weekly by Billboard magazine. Chart rankings are based on sales (physical and digital), radio play, and online streaming in the United States. In other words, the Billboard Hot 100 Chart remains one of the definitive ways to measure the success of a popular song. As you might have noticed, we constructed the definition of the hit variable around this context. If a song made it into the chart, it signifies that it is popular and therefore a hit. Thus, all the songs present in the charts of Billboard from each year since 1955 to 2021 were retrieved using the Billboard API. The library provided the track_name and the artist_name.
 
-- Language: Language of the text.
-- Source: Newspaper from which the text is from.
-- Date: Date of the article that contains the text.
-- Text: Sentence/paragraph from the newspaper.
+### The Million Song Dataset
+A dataset of 10,000 random songs was collected from the Million Songs Dataset (MSD), a free dataset maintained by labROSA at Columbia University and EchoNest. This was narrowed down to songs released between 2007 and 2021 in order to counterbalance the skewness of the dataset. The dataset provided the artist name and song title, as well as other miscellaneous features. Finally, we removed overlapping songs. At this point, tracks were labeled 1 or 0: 1 indicating that the song was featured in the Billboard Hot 100 (between 2007- 2021) and 0 indicating otherwise.
+
+### Spotify
+Spotify API, Spotipy! to extract audio features for these songs. The Spotify API provides users with 11 audio features, and other information such as total followers and artist popularity on Spotify. This dataset was then merged with previous one to form the final one. Furthermore, the artist’s name is associated with a binary variable featuring to indicate whether an artist has collaborated with one or more other artist for a song.
 
 ## Data Acquisition
-Data collection is as simple as downloading from Kaggle through its API in Google Colab.
+Data collection is tricky as it comes from different sources. It is all brought together in R studio:
+
+The variables considered for the project are listed and explained below:
+• hit: whether a song is a hit or not
+• featuring: whether there are other artists that contributed to a song
+• artist_name: the name of the artist of a song
+• pop_artist: the popularity of an artist ranked from 0 to 100
+• tot_followers: number of followers on spotify
+• track_name: name of the song
+• rel_date: date in which a song is released
+• pop_track: popularity of track ranked from 0 to 100 (it can differ from our definition of hit)
+• avail_mark: number of markets in which the song is present from 1 to 178
+In addition, a variable for each feature is considered:
+• acousticness • danceability • duration_ms • energy
+• instrumentalness • liveness
+• loudness
+• Speechiness
+• tempo
+• time_signature • valence
 
 ## Data Preprocessing
-This study is conducted on only English language. The other columns are disregarded. After filtering, the resulted dataset is composed by 1.010.242 rows:
-
-- Replace special characters and expand contractions
-- Split sentences
-- Remove punctuation, blank spaces and capitalization
-- Remove digits
-- Remove stop words
-- Lemmatization
-- Subsampling
+Data pre-processing is carried out according to the statistical method used.
 
 # Project structure
 
 ```bash
-├── code
-│   ├── spark_old_newspapers_market_basket_analysis.ipynb
+├── data
+│   ├── billboard.csv               # data from billboard api
+│   ├── millionsongs.csv            # data from millionsongs dataset
+│   ├── songs.csv                   # data from spotify api
+├── python
+│   ├── billboardAPI.py             # API code to retrieve data from billboard 
+│   ├── millionsongs.py             # code to retrieve only specific columns to use for Spotify API
+│   ├── spotifyAPI.py               # API code to complete the dataset with Spotify features
+│   ├── tensorflow.py               # Application of neural networks
+├── r
+│   ├── hitsongs.R                  # Code to pre-process data, EDA, and apply the main ML techniques
 ├── report
-│   ├── old_newspaper_report.pdf
+│   ├── song_hit_prediction.pdf     # written report
 ├── img
-│   ├── headerheader.jpg
+│   ├── headerheader.jpg            # project front image
 ├── README.md
 └── .gitattributes,
 ```
