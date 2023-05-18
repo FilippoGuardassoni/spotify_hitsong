@@ -24,11 +24,32 @@ The global recorded music market grew by 7.4% in 2020, the sixth consecutive yea
 ## Python Packages Used
 - **General Purpose:** General purpose packages like `urllib, os, request`, and many more.
 - **Data Manipulation:** Packages used for handling and importing dataset such as `pandas, numpy` and others.
-- **Data Visualization:** Include packages which were used to plot graphs in the analysis or for understanding the ML modelling such as `seaborn, matplotlib` and others.
 - **Machine Learning:** This includes packages that were used to generate the ML model such as `scikit, tensorflow`, etc.
 
-# Data
+## R Packages Used
+install.packages ("ggplot2")
+install.packages("gridExtra")
+install.packages("dplyr")
+install.packages("pastecs")
+install.packages ("reshape")
+install.packages("reshape2")
+install.packages("factoextra")
+install.packages("tidyverse")
+install.packages("corrplot")
+install.packages("caTools")
+install.packages("pROC")
+install.packages("caret")
+install.packages("repr")
+install.packages("glmnet")
+install.packages("Rcpp")
+install.packages("readr")
+install.packages("randomForest")
+install.packages("parameters")
+install.packages("see")
+install.packages("scales")
+install.packages("e1071")
 
+# Data
 The song dataset contains around 12.500 records of songs with artist information and audio features.
 
 ## Source Data
@@ -83,32 +104,27 @@ Data pre-processing is carried out according to the statistical method used.
 │   ├── song_hit_prediction.pdf     # written report
 ├── img
 │   ├── headerheader.jpg            # project front image
+├── LICENSE
 ├── README.md
 └── .gitattributes,
 ```
 
 # Results and evaluation
-After a great number of trials, the Apriori algorithm was considered too inefficient to run with the whole dataset. In fact, these actions were taken:
+The test set was created randomly using sample.split function from R package.
+The Random Forest once again performed better for the classification. The overall results are reported below:
 
-1. Several values of minimum support and confidence were considered such as 0.01, 0.05, 0.001.
-2. The code was run for as long as 7 hours without a final output.
-3. Different best practices to optimize the code and the Spark environment were followed.
+![image](https://github.com/FilippoGuardassoni/spotify_hitsong/assets/85356795/4025d426-4526-48e4-840d-0f0546b423ef)
 
-Then, a subsample of the dataset was randomly created using n = 500. Min. Support is equal to 0.01. Finally, the confidence values are calculated and printed in a dataframe in descending order.
+All the models predicted the test set with an incredibly high consistency, showing almost no overfitting over the training dataset. Considering the training set, the same conclusions can be drawn here.
+The focus was mainly on the accuracy of results, but the precision and recall for the best models are reported as well since false positive predictions may be costly when a music label invests in a song that is actually unlikely to become a hit.
 
-<img width="201" alt="image" src="https://github.com/FilippoGuardassoni/old_newspaper/assets/85356795/800db652-9bc1-442b-8d56-bf105b75d1a8">
-
-Again, the same kind of steps highlighted above were followed in the implementation of the FP-Growth algorithm. Unlike Apriori, frequent itemsets and association rules were found. The association rule table above represent the patterns that can be discerned from the dataset.
-
-<img width="394" alt="image" src="https://github.com/FilippoGuardassoni/old_newspaper/assets/85356795/27303fd2-160e-433b-99bc-1c31b10318d0">
-
-In conclusion, FP-Growth algorithm has revealed to the more efficient to implement when limited resources are involved (even time) to analyze a very big dataset.
+![image](https://github.com/FilippoGuardassoni/spotify_hitsong/assets/85356795/d5c4a220-8a34-4c80-9363-743968b69f20)
 
 # Future work
-The first step to improve this analysis would be to gather additional variables to create context for the analysis, and create a basket for each context. In this case, for example, the genre of the newspaper or even of the news itself. In this way, the patterns found could have more potential meaning. Apriori and FP-Growth were implemented in this analysis, however new ones are constantly being proposed and tested such as Eclat, PCY and YAFIM.
+This study aimed to predict whether a song will be a hit or not using features from Spotify API as a base. The first limitations come in play here. The definition of what a hit is inherently has constraints. This affects the composition of the dataset as well. A broader definition of hit could impact positively the research. In addition, the features are limited to the ones that Spotify API makes available. Other features for example of sound can be inserted such as bit depth and amplitude. Feature extraction and spectrogram analysis from the song audio files could be another successful approach. Subjective preferences, seasonality and time period might be taken in account as well. As instance, certain songs or genre such as Latin music are more likely to become hits in summer than in winter. Furthermore, particular characteristics in songs that made songs famous in the past are not a good guarantee for the future. While rock music dominated in the decades before 2000, nowadays electronic music took hold. Lyrics of a song could be considered to see if there are recurrencies, patterns or words that boost listening.
 
 # Acknowledgments/References
-See report/old_newspaper_report.pdf for references.
+See report/song_hit_prediction.pdf for references.
 
 # License
 For this github repository, the License used is [MIT License](https://opensource.org/license/mit/).
