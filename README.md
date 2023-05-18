@@ -113,6 +113,7 @@ Data pre-processing is carried out according to the statistical method used.
 The test set was created randomly using sample.split function from R package.
 The Random Forest once again performed better for the classification. The overall results are reported below:
 
+
 <img width="617" alt="Screenshot 2023-05-18 at 19 45 22" src="https://github.com/FilippoGuardassoni/spotify_hitsong/assets/85356795/b420dcdd-5dbe-4170-81b7-cfe1797d705c">
 
 All the models predicted the test set with an incredibly high consistency, showing almost no overfitting over the training dataset. Considering the training set, the same conclusions can be drawn here.
