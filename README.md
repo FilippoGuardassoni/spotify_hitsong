@@ -1,4 +1,4 @@
-![](https://github.com/FilippoGuardassoni/spotify_hitsong/blob/main/img/headerheader.jpg)
+![](https://github.com/FilippoGuardassoni/spotify_hitsong/blob/main/img/headerheader.jpeg)
 
 # Song Hit Prediction using Statistical Learning
 
