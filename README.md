@@ -113,12 +113,13 @@ Data pre-processing is carried out according to the statistical method used.
 The test set was created randomly using sample.split function from R package.
 The Random Forest once again performed better for the classification. The overall results are reported below:
 
-![image](https://github.com/FilippoGuardassoni/spotify_hitsong/assets/85356795/4025d426-4526-48e4-840d-0f0546b423ef)
+<img width="617" alt="Screenshot 2023-05-18 at 19 45 22" src="https://github.com/FilippoGuardassoni/spotify_hitsong/assets/85356795/b420dcdd-5dbe-4170-81b7-cfe1797d705c">
 
 All the models predicted the test set with an incredibly high consistency, showing almost no overfitting over the training dataset. Considering the training set, the same conclusions can be drawn here.
 The focus was mainly on the accuracy of results, but the precision and recall for the best models are reported as well since false positive predictions may be costly when a music label invests in a song that is actually unlikely to become a hit.
 
-![image](https://github.com/FilippoGuardassoni/spotify_hitsong/assets/85356795/d5c4a220-8a34-4c80-9363-743968b69f20)
+<img width="475" alt="Screenshot 2023-05-18 at 19 46 59" src="https://github.com/FilippoGuardassoni/spotify_hitsong/assets/85356795/e4bfc124-b326-4150-b562-a9d66f783085">
+
 
 # Future work
 This study aimed to predict whether a song will be a hit or not using features from Spotify API as a base. The first limitations come in play here. The definition of what a hit is inherently has constraints. This affects the composition of the dataset as well. A broader definition of hit could impact positively the research. In addition, the features are limited to the ones that Spotify API makes available. Other features for example of sound can be inserted such as bit depth and amplitude. Feature extraction and spectrogram analysis from the song audio files could be another successful approach. Subjective preferences, seasonality and time period might be taken in account as well. As instance, certain songs or genre such as Latin music are more likely to become hits in summer than in winter. Furthermore, particular characteristics in songs that made songs famous in the past are not a good guarantee for the future. While rock music dominated in the decades before 2000, nowadays electronic music took hold. Lyrics of a song could be considered to see if there are recurrencies, patterns or words that boost listening.
