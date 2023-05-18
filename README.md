@@ -1,7 +1,6 @@
-## SPOTIFY_HITSONGS
 ![](https://github.com/FilippoGuardassoni/spotify_hitsong/blob/main/img/headerheader.jpg)
 
-# Frequent Pattern Mining of Old Newspapers using Apriori Algorithm
+# Song Hit Prediction using Statistical Learning
 
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/pragyy/datascience-readme-template?include_prereleases)
 ![GitHub last commit](https://img.shields.io/github/last-commit/FilippoGuardassoni/old_newspaper)
