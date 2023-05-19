@@ -15,10 +15,9 @@ The global recorded music market grew by 7.4% in 2020, the sixth consecutive yea
 
 # Installation and Setup
 
+## Codes and Resources Used
 - Tensorflow
 - R/ R studio
-
-## Codes and Resources Used
 - Python 2.7 and up
 
 ## Python Packages Used
